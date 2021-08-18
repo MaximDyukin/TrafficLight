@@ -12,7 +12,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var redLight: UIView!
     @IBOutlet weak var yellowLight: UIView!
     @IBOutlet weak var greenLight: UIView!
+    
     @IBOutlet weak var startButton: UIButton!
+    
+    private let alpha = CGFloat(1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +33,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func moveLights(_ sender: UIButton) {
-        
         if startButton.titleLabel?.text == "START" {
             startButton.setTitle("NEXT", for: .normal)
             redLight.alpha = 1
         } else {
-            let alpha = CGFloat(1)
-            
             switch alpha {
             case redLight.alpha:
                 redLight.alpha = 0.3
