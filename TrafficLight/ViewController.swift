@@ -15,8 +15,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var startButton: UIButton!
     
-    private let alpha = CGFloat(1)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +35,7 @@ class ViewController: UIViewController {
             startButton.setTitle("NEXT", for: .normal)
             redLight.alpha = 1
         } else {
-            switch alpha {
+            switch CGFloat(1) {
             case redLight.alpha:
                 redLight.alpha = 0.3
                 yellowLight.alpha = 1
