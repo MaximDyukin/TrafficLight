@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum CurrentLight {
+    case red, yellow, green
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var redLight: UIView!
@@ -15,8 +19,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var startButton: UIButton!
     
+    private var currentLight = CurrentLight.red
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        redLight.alpha = 0.3
+        yellowLight.alpha = 0.3
+        greenLight.alpha = 0.3
         
         startButton.layer.cornerRadius = 15
     }
@@ -26,26 +36,25 @@ class ViewController: UIViewController {
         yellowLight.layer.cornerRadius = yellowLight.frame.height / 2
         greenLight.layer.cornerRadius = greenLight.frame.height / 2
     }
-
+    
     @IBAction func moveLights(_ sender: UIButton) {
         if startButton.titleLabel?.text == "START" {
             startButton.setTitle("NEXT", for: .normal)
+        }
+        
+        switch currentLight {
+        case .red:
             redLight.alpha = 1
-        } else {
-            switch CGFloat(1) {
-            case redLight.alpha:
-                redLight.alpha = 0.3
-                yellowLight.alpha = 1
-            case yellowLight.alpha:
-                yellowLight.alpha = 0.3
-                greenLight.alpha = 1
-            case greenLight.alpha:
-                greenLight.alpha = 0.3
-                redLight.alpha = 1
-            default:
-                break
-            }
+            greenLight.alpha = 0.3
+            currentLight = .yellow
+        case .yellow:
+            yellowLight.alpha = 1
+            redLight.alpha = 0.3
+            currentLight = .green
+        case .green:
+            greenLight.alpha = 1
+            yellowLight.alpha = 0.3
+            currentLight = .red
         }
     }
 }
-

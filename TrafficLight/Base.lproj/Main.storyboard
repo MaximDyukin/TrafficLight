@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,37 +13,40 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrafficLight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUi-7c-rMz">
-                                <rect key="frame" x="110" y="40" width="100" height="100"/>
+                                <rect key="frame" x="116" y="84" width="143" height="143"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WUi-7c-rMz" secondAttribute="height" multiplier="1:1" id="noP-Oz-Vy3"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFj-6k-4b9">
-                                <rect key="frame" x="110" y="165" width="100" height="100"/>
+                                <rect key="frame" x="116" y="252" width="143" height="143"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sFj-6k-4b9" secondAttribute="height" multiplier="1:1" id="XzP-v5-4ve"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iRr-3w-TGM">
-                                <rect key="frame" x="110" y="290" width="100" height="100"/>
+                                <rect key="frame" x="116" y="420" width="143" height="143"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iRr-3w-TGM" secondAttribute="height" multiplier="1:1" id="NHe-ec-1Xg"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qd-kS-a2N">
-                                <rect key="frame" x="70" y="458" width="180" height="50"/>
+                                <rect key="frame" x="82" y="646.66666666666663" width="211" height="71.333333333333371"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="START">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="moveLights:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AAW-gW-9ps"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -67,7 +70,7 @@
                     <connections>
                         <outlet property="greenLight" destination="iRr-3w-TGM" id="p3T-TF-ejx"/>
                         <outlet property="redLight" destination="WUi-7c-rMz" id="NJN-Iq-AJp"/>
-                        <outlet property="startButton" destination="3Qd-kS-a2N" id="ede-7y-rcs"/>
+                        <outlet property="startButton" destination="3Qd-kS-a2N" id="Z5H-lZ-SGS"/>
                         <outlet property="yellowLight" destination="sFj-6k-4b9" id="D3d-R3-htM"/>
                     </connections>
                 </viewController>
