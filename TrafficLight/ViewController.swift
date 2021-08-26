@@ -18,16 +18,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redLight.alpha = 0.3
-        redLight.layer.cornerRadius = 60
-        
-        yellowLight.alpha = 0.3
-        yellowLight.layer.cornerRadius = 60
-        
-        greenLight.alpha = 0.3
-        greenLight.layer.cornerRadius = 60
-        
-        startButton.layer.cornerRadius = 10
+        startButton.layer.cornerRadius = 15
+    }
+    
+    override func viewWillLayoutSubviews() {
+        redLight.layer.cornerRadius = redLight.frame.height / 2
+        yellowLight.layer.cornerRadius = yellowLight.frame.height / 2
+        greenLight.layer.cornerRadius = greenLight.frame.height / 2
     }
 
     @IBAction func moveLights(_ sender: UIButton) {
